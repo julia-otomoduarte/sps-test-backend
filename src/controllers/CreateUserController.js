@@ -2,13 +2,13 @@ const CreateUserService = require("../services/CreateUserService");
 
 async function createUser(req, res) {
   try {
-    const { name, email, password, type } = req.body;
+    const { name, email, password } = req.body;
 
-    if (!name || !email || !password || !type) {
+    if (!name || !email || !password ) {
       return res.status(400).json({ message: "Todos os campos são obrigatórios" });
     }
 
-    const result = await CreateUserService.createUser(name, email, password, type);
+    const result = await CreateUserService.createUser(name, email, password);
 
     return res.status(201).json(result);
   } catch (error) {

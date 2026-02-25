@@ -10,7 +10,6 @@ async function updateUser(requestingUser, id, existingUser, data) {
     ...existingUser,
     name: data.name ?? existingUser.name,
     email: data.email ?? existingUser.email,
-    type: requestingUser.type === "admin" ? (data.type ?? existingUser.type) : existingUser.type,
     password: data.password
       ? await bcrypt.hash(data.password, 10)
       : existingUser.password,

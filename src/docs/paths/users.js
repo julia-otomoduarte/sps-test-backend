@@ -4,8 +4,6 @@
  *   post:
  *     summary: Criação de usuário
  *     tags: [Users]
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -28,4 +26,42 @@
  *         description: Usuário criado com sucesso
  *       400:
  *         description: Email já cadastrado
+ */
+
+
+/**
+ * @swagger
+ * /users/{id}:
+ *  patch:
+ *    summary: Atualização de usuário
+ *    tags: [Users]
+ *    security:
+ *      - bearerAuth: [ ]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: string
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              email:
+ *                type: string
+ *              password:
+ *                type: string
+ *              type:
+ *                type: string
+ *                example: user
+ *    responses:
+ *      200:
+ *        description: Usuário atualizado com sucesso
+ *      400:
+ *        description: Email já cadastrado ou sem permissão para atualizar tipo
  */

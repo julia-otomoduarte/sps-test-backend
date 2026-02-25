@@ -34,7 +34,7 @@ function updateUser(updatedUser) {
   const db = getDatabase();
   const index = db.users.findIndex((user) => user.id === updatedUser.id);
   if (index !== -1) {
-    db.users[index] = updatedUser;
+    db.users[index] = { ...db.users[index], ...updatedUser };
     fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
   }
 }
