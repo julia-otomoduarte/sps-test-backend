@@ -14,7 +14,4 @@ routes.post("/login", AuthController.login);
 
 routes.post("/users", verifyRepeatedUserEmailMiddleware, CreateUserController.createUser);
 
-// Rotas autenticadas — adicione authMiddleware antes do controller
-// Exemplo: routes.get("/profile", authMiddleware, ProfileController.getProfile);
-
 module.exports = routes;
