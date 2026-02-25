@@ -1,6 +1,6 @@
 const env = require("dotenv");
 const express = require("express");
-const routes = require("./routes");
+const routes = require("./routes/routes");
 const cors = require("cors");
 
 const app = express();
