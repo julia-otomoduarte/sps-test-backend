@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const AuthController = require("../controllers/AuthController");
 const CreateUserController = require("../controllers/CreateUserController");
-const verifyRepeatedUserEmailMiddleware = require("../middlewares/verifyRepeatedUserEmail");
+const UpdateUserController = require("../controllers/UpdateUserController");
+const { verifyRepeatedUserEmail, verifyUserExists, verifyEmailAvailable } = require("../middlewares/userMiddlewares");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 const routes = Router();
@@ -12,6 +13,8 @@ routes.get("/", (req, res) => {
 
 routes.post("/login", AuthController.login);
 
-routes.post("/users", verifyRepeatedUserEmailMiddleware, CreateUserController.createUser);
+routes.post("/users", verifyRepeatedUserEmail, CreateUserController.createUser);
+
+routes.patch("/users/:id", authMiddleware, verifyUserExists, verifyEmailAvailable, UpdateUserController.updateUser);
 
 module.exports = routes;

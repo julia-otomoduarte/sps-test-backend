@@ -13,6 +13,11 @@ function findByEmail(email) {
   return db.users.find((user) => user.email === email) || null;
 }
 
+function findById(id) {
+  const db = getDatabase();
+  return db.users.find((user) => user.id === id) || null;
+}
+
 function createUser(user) {
   const db = getDatabase();
   db.users.push(user);
@@ -25,5 +30,14 @@ function getLastUserId() {
   return db.users[db.users.length - 1].id || 0;
 }
 
-module.exports = { findByEmail, createUser, getLastUserId };
+function updateUser(updatedUser) {
+  const db = getDatabase();
+  const index = db.users.findIndex((user) => user.id === updatedUser.id);
+  if (index !== -1) {
+    db.users[index] = updatedUser;
+    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+  }
+}
+
+module.exports = { findByEmail, findById, createUser, getLastUserId, updateUser };
 

@@ -1,10 +1,25 @@
 {
-    "users": [
-        {
-            "name": "admin",
-            "email": "admin@spsgroup.com.br",
-            "type": "admin",
-            "password": "$2b$10$ihxEHLWl3NeWkgoaMCKW3eeQ4KOFgzcWkr9RXcseL2jj5so9LOc.W"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@spsgroup.com.br",
+      "type": "admin",
+      "password": "$2b$10$ihxEHLWl3NeWkgoaMCKW3eeQ4KOFgzcWkr9RXcseL2jj5so9LOc.W"
+    },
+    {
+      "id": 2,
+      "name": "Julia",
+      "email": "julia@email.com",
+      "password": "$2b$10$Al8fIkuwp5D1T.0QHHT2FulK30WHZ9cDXGYwIDqDnIh4/x.znIF7.",
+      "type": "user"
+    },
+    {
+      "id": 3,
+      "name": "Julia2",
+      "email": "julia2@email.com",
+      "password": "$2b$10$HDKT2ilUTuQ1U63xKYJt4u84oYKQvr7QDDku9xgt9paGuBBhFqqL.",
+      "type": "user"
+    }
+  ]
 }
