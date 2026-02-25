@@ -3,7 +3,7 @@ const UserRepository = require("../repositories/UserRepository");
 
 async function updateUser(requestingUser, id, existingUser, data) {
   if (requestingUser.type !== "admin" && requestingUser.id !== id) {
-    throw new Error("Sem permissão");
+    throw new Error("Você não tem permissão para atualizar este usuário");
   }
 
   const updatedUser = {

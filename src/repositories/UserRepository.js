@@ -39,5 +39,14 @@ function updateUser(updatedUser) {
   }
 }
 
-module.exports = { findByEmail, findById, createUser, getLastUserId, updateUser };
+function deleteUser(id) {
+  const db = getDatabase();
+  const index = db.users.findIndex((user) => user.id === id);
+  if (index !== -1) {
+    db.users.splice(index, 1);
+    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+  }
+}
+
+module.exports = { findByEmail, findById, createUser, getLastUserId, updateUser, deleteUser };
 

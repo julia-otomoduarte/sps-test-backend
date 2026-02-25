@@ -65,3 +65,25 @@
  *      400:
  *        description: Email já cadastrado ou sem permissão para atualizar tipo
  */
+
+
+/**
+ * @swagger
+ * /users/{id}:
+ *  delete:
+ *    summary: Exclusão de usuário
+ *    tags: [Users]
+ *    security:
+ *      - bearerAuth: [ ]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      204:
+ *        description: Usuário excluído com sucesso
+ *      403:
+ *        description: Sem permissão para excluir este usuário
+ */
