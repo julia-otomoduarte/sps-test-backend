@@ -4,7 +4,7 @@
             "name": "admin",
             "email": "admin@spsgroup.com.br",
             "type": "admin",
-            "password": "1234"
+            "password": "$2b$10$ihxEHLWl3NeWkgoaMCKW3eeQ4KOFgzcWkr9RXcseL2jj5so9LOc.W"
         }
     ]
 }
