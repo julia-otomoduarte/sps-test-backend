@@ -1,4 +1,4 @@
-# Documentação da API - Teste Técnico SPS-Groups
+# Documentação da API - Teste Técnico SPS-Group
 
 ## Índice
 
@@ -12,7 +12,7 @@
 
 ## Sobre o Projeto
 
-API REST desenvolvida como teste técnico para o processo seletivo da **SPS Groups**.
+API REST desenvolvida como teste técnico para o processo seletivo da **SPS Groups*.
 
 O projeto simula um sistema de gerenciamento de usuários com autenticação via JWT, permitindo criar, consultar, atualizar e remover usuários, com controle de permissões baseado no tipo de conta (`admin` ou `user`).
 
