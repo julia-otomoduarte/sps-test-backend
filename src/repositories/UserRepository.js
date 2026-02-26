@@ -41,7 +41,7 @@ function updateUser(updatedUser) {
 
 function deleteUser(id) {
   const db = getDatabase();
-  const index = db.users.findIndex((user) => user.id === id);
+  const index = db.users.findIndex((user) => String(user.id) === String(id));
   if (index !== -1) {
     db.users.splice(index, 1);
     fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
