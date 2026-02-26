@@ -83,3 +83,24 @@
  *      403:
  *        description: Sem permissão para excluir este usuário
  */
+
+/**
+ * @swagger
+ * /users/{id}:
+ *  get:
+ *    summary: Obtenção de usuário
+ *    tags: [Users]
+ *    security:
+ *      - bearerAuth: [ ]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      200:
+ *        description: Usuário obtido com sucesso
+ *      403:
+ *        description: Sem permissão para acessar este usuário
+ */
