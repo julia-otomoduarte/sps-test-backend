@@ -1,4 +1,3 @@
-const bcrypt = require("bcryptjs");
 const UserRepository = require("../repositories/UserRepository");
 
 async function updateUser(requestingUser, id, existingUser, data) {
@@ -10,9 +9,6 @@ async function updateUser(requestingUser, id, existingUser, data) {
     ...existingUser,
     name: data.name ?? existingUser.name,
     email: data.email ?? existingUser.email,
-    password: data.password
-      ? await bcrypt.hash(data.password, 10)
-      : existingUser.password,
   };
 
   UserRepository.updateUser(updatedUser);

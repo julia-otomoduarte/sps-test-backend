@@ -52,8 +52,7 @@
  *                type: string
  *              email:
  *                type: string
- *              password:
- *                type: string
+ *            
  *            
  *    responses:
  *      200:
@@ -103,4 +102,40 @@
  *        description: Usuário obtido com sucesso
  *      403:
  *        description: Sem permissão para acessar este usuário
+ */
+
+
+/**
+ * @swagger
+ * /users/{id}/password:
+ *   patch:
+ *     summary: Atualização de senha de usuário
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [oldPassword, newPassword]
+ *             properties:
+ *               oldPassword:
+ *                 type: string
+ *               newPassword:
+ *                 type: string
+ *     responses:
+ *       204:
+ *         description: Senha atualizada com sucesso
+ *       400:
+ *         description: Senha antiga incorreta ou campos faltando
+ *       403:
+ *         description: Sem permissão para alterar a senha deste usuário
  */
