@@ -15,7 +15,7 @@ function findByEmail(email) {
 
 function findById(id) {
   const db = getDatabase();
-  return db.users.find((user) => user.id === id) || null;
+  return db.users.find((user) => String(user.id) === String(id)) || null;
 }
 
 function createUser(user) {
@@ -32,7 +32,7 @@ function getLastUserId() {
 
 function updateUser(updatedUser) {
   const db = getDatabase();
-  const index = db.users.findIndex((user) => user.id === updatedUser.id);
+  const index = db.users.findIndex((user) => String(user.id) === String(updatedUser.id));
   if (index !== -1) {
     db.users[index] = { ...db.users[index], ...updatedUser };
     fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));

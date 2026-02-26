@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const UserRepository = require("../repositories/UserRepository");
 
 async function updateUser(requestingUser, id, existingUser, data) {
-  if (requestingUser.type !== "admin" && requestingUser.id !== id) {
+  if (requestingUser.type !== "admin" && String(requestingUser.id) !== String(id)) {
     throw new Error("Você não tem permissão para atualizar este usuário");
   }
 

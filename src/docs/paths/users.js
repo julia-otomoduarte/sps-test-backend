@@ -18,9 +18,7 @@
  *                 type: string
  *               password:
  *                 type: string
- *               type:
- *                 type: string
- *                 example: user
+ *             
  *     responses:
  *       201:
  *         description: Usuário criado com sucesso
@@ -56,9 +54,7 @@
  *                type: string
  *              password:
  *                type: string
- *              type:
- *                type: string
- *                example: user
+ *            
  *    responses:
  *      200:
  *        description: Usuário atualizado com sucesso
