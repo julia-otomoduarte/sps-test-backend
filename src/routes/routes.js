@@ -5,6 +5,7 @@ const UpdateUserController = require("../controllers/UpdateUserController");
 const DeleteUserController = require("../controllers/DeleteUserController");
 const GetUserController = require("../controllers/GetUserController");
 const ChangePasswordController = require("../controllers/ChangePasswordController");
+const ListAllUsersController = require("../controllers/ListAllUsersController");
 const { verifyRepeatedUserEmail, verifyUserExists, verifyEmailAvailable } = require("../middlewares/userMiddlewares");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -25,5 +26,6 @@ routes.patch("/users/:id/password", authMiddleware, verifyUserExists, ChangePass
 routes.delete("/users/:id", authMiddleware, verifyUserExists, DeleteUserController.deleteUser);
 
 routes.get("/users/:id", authMiddleware, verifyUserExists, GetUserController.getUser);
+routes.get("/users", authMiddleware, ListAllUsersController.listAllUsers);
 
 module.exports = routes;

@@ -129,6 +129,15 @@ Cria um novo usuário.
 
 ---
 
+#### 🔒 `GET /users`
+
+Lista todos os usuários cadastrados.
+
+- **Autenticação:** Sim
+- **Resposta 200:**
+
+---
+
 #### 🔒 `GET /users/:id`
 
 Retorna os dados de um usuário pelo ID.

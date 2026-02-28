@@ -139,3 +139,18 @@
  *       403:
  *         description: Sem permissão para alterar a senha deste usuário
  */
+
+/**
+ * @swagger
+ * /users:
+ *  get:
+ *    summary: Listagem de usuários
+ *    tags: [Users]
+ *    security:
+ *      - bearerAuth: [ ]
+ *    responses:
+ *      200:
+ *        description: Usuários listados com sucesso
+ *      401:
+ *        description: Usuário não autenticado
+ */

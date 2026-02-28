@@ -48,5 +48,10 @@ function deleteUser(id) {
   }
 }
 
-module.exports = { findByEmail, findById, createUser, getLastUserId, updateUser, deleteUser };
+function getAllUsers() {
+  const db = getDatabase();
+  return db.users;
+}
+
+module.exports = { findByEmail, findById, createUser, getLastUserId, updateUser, deleteUser, getAllUsers };
 
