@@ -6,7 +6,7 @@ const DeleteUserController = require("../controllers/DeleteUserController");
 const GetUserController = require("../controllers/GetUserController");
 const ChangePasswordController = require("../controllers/ChangePasswordController");
 const ListAllUsersController = require("../controllers/ListAllUsersController");
-const { verifyRepeatedUserEmail, verifyUserExists, verifyEmailAvailable } = require("../middlewares/userMiddlewares");
+const { verifyRepeatedUserEmail, verifyUserExists, verifyEmailAvailable, verifyIsAdmin } = require("../middlewares/userMiddlewares");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 const routes = Router();
@@ -17,7 +17,7 @@ routes.get("/", (req, res) => {
 
 routes.post("/login", AuthController.login);
 
-routes.post("/users", verifyRepeatedUserEmail, CreateUserController.createUser);
+routes.post("/users", authMiddleware, verifyIsAdmin, verifyRepeatedUserEmail, CreateUserController.createUser);
 
 routes.patch("/users/:id", authMiddleware, verifyUserExists, verifyEmailAvailable, UpdateUserController.updateUser);
 

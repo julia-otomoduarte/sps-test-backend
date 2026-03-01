@@ -4,6 +4,8 @@
  *   post:
  *     summary: Criação de usuário
  *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -23,6 +25,10 @@
  *       201:
  *         description: Usuário criado com sucesso
  *       400:
+ *         description: Campos obrigatórios faltando
+ *       403:
+ *         description: Apenas administradores podem criar usuários
+ *       409:
  *         description: Email já cadastrado
  */
 

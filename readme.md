@@ -111,11 +111,12 @@ Autentica um usuário e retorna um token JWT.
 
 > Rotas marcadas com 🔒 exigem o header `Authorization: Bearer <token>`.
 
-#### `POST /users`
+#### 🔒 `POST /users`
 
 Cria um novo usuário.
 
-- **Autenticação:** Não
+- **Autenticação:** Sim
+- **Permissão:** Admin
 - **Body:**
   ```json
   {
@@ -125,6 +126,7 @@ Cria um novo usuário.
   }
   ```
 - **Resposta 201:** Usuário criado com sucesso
+- **Resposta 403:** Sem permissão
 - **Resposta 409:** Email já cadastrado
 
 ---
