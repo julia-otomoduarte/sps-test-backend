@@ -36,7 +36,12 @@ const verifyEmailAvailable = (req, res, next) => {
 
   const existing = UserRepository.findByEmail(email);
 
-  if (existing && existing.id !== req.user?.id) {
+  if (req.user?.type !== "admin" && (existing && existing.id !== req.user?.id)) {
+    return res.status(403).json({ message: "Email já cadastrado" });
+  }
+
+
+  if (existing && existing.id !== req.targetUser?.id) {
     return res.status(409).json({ message: "Email já cadastrado" });
   }
 
