@@ -1,4 +1,4 @@
-async function createUser(name, email, password) {
+async function createUser(name, email, password, type) {
   const bcrypt = require("bcryptjs");
   const UserRepository = require("../repositories/UserRepository");
   const { generateId } = require("../utils");
@@ -9,7 +9,7 @@ async function createUser(name, email, password) {
     name,
     email,
     password: hashedPassword,
-    type: "user",
+    type: type || "user",
   };
 
   UserRepository.createUser(newUser);

@@ -41,7 +41,7 @@ O usuário administrador inicial já vem mockado:
 | `type`     | `admin`                 |
 | `password` | `1234`                  |
 
-> Observação: Todos os outros usuários cadastrados posteriormente serão do tipo "user".
+> Observação: Ao criar ou atualizar um usuário, o campo `type` é opcional. Se não enviado ou enviado como `""`, o tipo será definido como `"user"`.
 
 ---
 
@@ -122,9 +122,11 @@ Cria um novo usuário.
   {
     "name": "John Doe",
     "email": "john_doe@email.com",
-    "password": "1234"
+    "password": "1234",
+    "type": "user"
   }
   ```
+  > O campo `type` é opcional. Se não enviado ou enviado como `""`, o usuário será criado como `"user"`. Apenas administradores podem definir o tipo do usuário.
 - **Resposta 201:** Usuário criado com sucesso
 - **Resposta 403:** Sem permissão
 - **Resposta 409:** Email já cadastrado
@@ -160,9 +162,11 @@ Atualiza o nome e/ou email de um usuário.
   ```json
   {
     "name": "John Doe",
-    "email": "john_new@email.com"
+    "email": "john_new@email.com",
+    "type": "user"
   }
   ```
+  > O campo `type` é opcional. Se não enviado ou enviado como `""`, o tipo será definido como `"user"`. Apenas administradores podem alterar o tipo do usuário.
 - **Resposta 200:** Usuário atualizado
 - **Resposta 403:** Sem permissão
 - **Resposta 409:** Email já cadastrado

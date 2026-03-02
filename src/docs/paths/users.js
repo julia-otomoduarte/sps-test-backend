@@ -20,6 +20,10 @@
  *                 type: string
  *               password:
  *                 type: string
+ *               type:
+ *                 type: string
+ *                 description: Tipo do usuário. Se não enviado ou vazio, será definido como "user"
+ *                 example: user
  *             
  *     responses:
  *       201:
@@ -58,8 +62,12 @@
  *                type: string
  *              email:
  *                type: string
- *            
- *            
+ *              type:
+ *                type: string
+ *                description: Tipo do usuário. Se não enviado ou vazio, será definido como "user"
+ *                example: user
+ *
+ *
  *    responses:
  *      200:
  *        description: Usuário atualizado com sucesso

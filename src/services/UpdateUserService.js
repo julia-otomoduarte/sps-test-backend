@@ -9,6 +9,7 @@ async function updateUser(requestingUser, id, existingUser, data) {
     ...existingUser,
     name: data.name ?? existingUser.name,
     email: data.email ?? existingUser.email,
+    type: data.type || "user",
   };
 
   UserRepository.updateUser(updatedUser);
