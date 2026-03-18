@@ -168,3 +168,53 @@
  *      401:
  *        description: Usuário não autenticado
  */
+
+/**
+ * @swagger
+ * /users/{id}/upload:
+ *   post:
+ *     summary: Upload de foto ou documento para um usuário
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             required: [file]
+ *             properties:
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *                 description: >
+ *                   Foto (JPEG, PNG, WEBP) ou documento (PDF, DOC, DOCX).
+ *                   Tamanho máximo: 5 MB.
+ *     responses:
+ *       200:
+ *         description: Arquivo salvo com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Arquivo salvo com sucesso
+ *                 url:
+ *                   type: string
+ *                   example: /uploads/photos/1710123456789-avatar.png
+ *       400:
+ *         description: Nenhum arquivo enviado ou tipo não permitido
+ *       401:
+ *         description: Usuário não autenticado
+ *       404:
+ *         description: Usuário não encontrado
+ */

@@ -8,7 +8,8 @@ const ChangePasswordController = require("../controllers/ChangePasswordControlle
 const ListAllUsersController = require("../controllers/ListAllUsersController");
 const { verifyRepeatedUserEmail, verifyUserExists, verifyEmailAvailable, verifyIsAdmin } = require("../middlewares/userMiddlewares");
 const authMiddleware = require("../middlewares/authMiddleware");
-
+const upload = require("../middlewares/uploadDocuments.middleware");
+const UploadDocumentsController = require("../controllers/UploadDocumentsController");
 const routes = Router();
 
 routes.get("/", (req, res) => {
@@ -27,5 +28,7 @@ routes.delete("/users/:id", authMiddleware, verifyUserExists, DeleteUserControll
 
 routes.get("/users/:id", authMiddleware, verifyUserExists, GetUserController.getUser);
 routes.get("/users", authMiddleware, ListAllUsersController.listAllUsers);
+
+routes.post("/users/:id/upload", authMiddleware, verifyUserExists, upload.single("file"), UploadDocumentsController.uploadFile);
 
 module.exports = routes;
