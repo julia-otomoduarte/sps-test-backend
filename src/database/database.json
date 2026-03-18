@@ -6,8 +6,7 @@
       "email": "admin@spsgroup.com.br",
       "type": "admin",
       "password": "$2b$10$ihxEHLWl3NeWkgoaMCKW3eeQ4KOFgzcWkr9RXcseL2jj5so9LOc.W",
-      "photo": "/uploads/images/1773840848832-61f14752023d0.jpeg",
-     
+      "photo": "/uploads/images/1773840848832-61f14752023d0.jpeg"
     },
     {
       "id": 3,
@@ -15,8 +14,7 @@
       "email": "julia2@email.com",
       "password": "$2b$10$HDKT2ilUTuQ1U63xKYJt4u84oYKQvr7QDDku9xgt9paGuBBhFqqL.",
       "type": "user",
-      "photo": "/uploads/images/1773848704853-p09j7x4c.jpg.webp",
-  
+      "photo": "/uploads/images/1773848704853-p09j7x4c.jpg.webp"
     },
     {
       "id": 4,
@@ -56,8 +54,7 @@
       "email": "douglas@mail.com",
       "password": "$2b$10$JXfffNl6Wtkod35pfsHEY.JCLBF5PvpC65AwG/ps5FnQdxBwOnGAC",
       "type": "user",
-      "photo": "/uploads/images/1773846058788-p09j7x4c.jpg.webp",
-     
+      "photo": "/uploads/images/1773846058788-p09j7x4c.jpg.webp"
     }
   ]
 }
