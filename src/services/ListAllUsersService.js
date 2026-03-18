@@ -7,7 +7,7 @@ async function listAllUsers(requestingUser) {
 
     const listAllUsers = await UserRepository.getAllUsers();
 
-    return listAllUsers.map(user => ({id: user.id, name: user.name, email: user.email, type: user.type}));
+    return listAllUsers.map(user => ({id: user.id, name: user.name, email: user.email, type: user.type, photo: user.photo, documents: user.documents}));
 }
 
 module.exports = { listAllUsers };

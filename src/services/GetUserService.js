@@ -7,7 +7,7 @@ async function getUser (requestingUser, id) {
     }
     const user = await UserRepository.findById(id);
 
-    return {id: user.id, name: user.name, email: user.email, type: user.type};
+    return {id: user.id, name: user.name, email: user.email, type: user.type, photo: user.photo, documents: user.documents};
 }
 
 module.exports = { getUser };

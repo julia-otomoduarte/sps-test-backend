@@ -6,14 +6,17 @@
       "email": "admin@spsgroup.com.br",
       "type": "admin",
       "password": "$2b$10$ihxEHLWl3NeWkgoaMCKW3eeQ4KOFgzcWkr9RXcseL2jj5so9LOc.W",
-      "photo": "/uploads/images/1773840848832-61f14752023d0.jpeg"
+      "photo": "/uploads/images/1773840848832-61f14752023d0.jpeg",
+     
     },
     {
       "id": 3,
       "name": "Julia2",
       "email": "julia2@email.com",
       "password": "$2b$10$HDKT2ilUTuQ1U63xKYJt4u84oYKQvr7QDDku9xgt9paGuBBhFqqL.",
-      "type": "user"
+      "type": "user",
+      "photo": "/uploads/images/1773848704853-p09j7x4c.jpg.webp",
+  
     },
     {
       "id": 4,
@@ -21,6 +24,40 @@
       "email": "felipe@mail.com",
       "password": "$2b$10$jftblmgA8waGEiuzRHJ/m.3Dyvf8hkZvDVpWWwHBfI0niJyI5UXMG",
       "type": "user"
+    },
+    {
+      "id": 5,
+      "name": "Julia Otomo Duarte",
+      "email": "otomoduartejulia@gmail.com",
+      "password": "$2b$10$t3Poq4Up961rbPRoGVnps.zOElD0/IW1G4VSCObTZ4Bb/BCHCCf3m",
+      "type": "user"
+    },
+    {
+      "id": 6,
+      "name": "Julia Otomo Duarte 2",
+      "email": "otomoduartejulia2@gmail.com",
+      "password": "$2b$10$E2SSmALLWUel9uvhcrm7uO9sP1PEdXMOvqtxLdwnwgtk.uF5M2Ei2",
+      "type": "user",
+      "documents": [],
+      "photo": "/uploads/images/1773844124609-61f14752023d0.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Julia Otomo Duarte 3",
+      "email": "otomoduartejulia3@gmail.com",
+      "password": "$2b$10$uUBWEzkMu1LVzZs5e5DW/OWUHOuirJ6GmesBZvbtXR0kvpsNYye4.",
+      "type": "user",
+      "photo": "/uploads/images/1773844182222-61f14752023d0.jpeg",
+      "documents": []
+    },
+    {
+      "id": 8,
+      "name": "Douglas",
+      "email": "douglas@mail.com",
+      "password": "$2b$10$JXfffNl6Wtkod35pfsHEY.JCLBF5PvpC65AwG/ps5FnQdxBwOnGAC",
+      "type": "user",
+      "photo": "/uploads/images/1773846058788-p09j7x4c.jpg.webp",
+     
     }
   ]
 }

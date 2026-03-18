@@ -31,6 +31,8 @@ async function login(email, password) {
       name: user.name,
       email: user.email,
       type: user.type,
+      photo: user.photo || null,
+      documents: user.documents || [],
     },
   };
 }
