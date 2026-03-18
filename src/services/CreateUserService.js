@@ -13,6 +13,8 @@ async function createUser(name, email, password, type) {
   };
 
   UserRepository.createUser(newUser);
+
+  return { id: newUser.id, name: newUser.name, email: newUser.email, type: newUser.type};
 }
 
 module.exports = { createUser };
